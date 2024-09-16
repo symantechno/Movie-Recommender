@@ -3,8 +3,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 from nltk.stem.porter import PorterStemmer
 import numpy as np
 import pandas as pd
-movies=pd.read_csv(r'C:\Users\manis\Downloads\tmdb_5000_movies.csv')
-credits=pd.read_csv(r'C:\Users\manis\Downloads\tmdb_5000_credits.csv')
+movies=pd.read_csv(r'tmdb_5000_movies.csv')
+credits=pd.read_csv(r'tmdb_5000_credits.csv')
 movies=movies.merge(credits,on='title')
 movies=movies[['movie_id','title','overview','genres','keywords','cast','crew']]
 movies.dropna(inplace=True)
